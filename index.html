@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Capraz LLC — Authorized Amazon & E-Commerce Partner</title>
+<meta name="description" content="Capraz LLC is a professional authorized reseller and brand growth partner operating across Amazon North America, Europe, and major e-commerce platforms worldwide." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0E1A;
+  --ink-2:#0F1424;
+  --panel:#141A2E;
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.14);
+  --text:#E8ECF4;
+  --muted:#8A93A8;
+  --muted-2:#5C6580;
+  --cyan:#3DD4D0;
+  --cyan-dim:rgba(61,212,208,.14);
+  --amber:#F5A623;
+  --white:#FBFCFE;
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--cyan);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);opacity:.7}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 28px;
+  transition:background .4s ease,backdrop-filter .4s ease,padding .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{
+  background:rgba(10,14,26,.78);
+  backdrop-filter:blur(16px);
+  padding:14px 28px;
+  border-bottom:1px solid var(--line);
+}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.03em;display:flex;align-items:center;gap:9px}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--cyan);transition:width .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;
+  padding:10px 20px;border:1px solid var(--line-2);border-radius:50px;color:var(--text)!important;
+  transition:all .3s;
+}
+.nav-cta:hover{background:var(--cyan);border-color:var(--cyan);color:var(--ink)!important;box-shadow:0 0 24px var(--cyan-dim)}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,transparent,var(--ink) 78%);pointer-events:none}
+.hero-inner{position:relative;z-index:3;padding-top:80px}
+.hero h1{
+  font-size:clamp(40px,7vw,82px);font-weight:700;line-height:1.02;margin:22px 0 0;
+  max-width:14ch;
+}
+.hero h1 em{font-style:normal;color:var(--cyan);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;bottom:.08em;width:100%;height:.09em;background:var(--cyan);opacity:.4}
+.hero p.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:54ch;margin:26px 0 0;line-height:1.65}
+.hero-cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.btn{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;
+  padding:15px 30px;border-radius:50px;cursor:pointer;transition:all .3s;border:1px solid transparent;display:inline-flex;align-items:center;gap:9px;
+}
+.btn-primary{background:var(--cyan);color:var(--ink);box-shadow:0 8px 30px var(--cyan-dim)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(61,212,208,.32)}
+.btn-ghost{border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-stats{display:flex;gap:42px;margin-top:60px;flex-wrap:wrap}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:700;color:var(--white);line-height:1}
+.stat .lbl{font-size:13px;color:var(--muted-2);margin-top:8px;max-width:20ch}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint .line{width:1px;height:34px;background:linear-gradient(var(--cyan),transparent);animation:scrolldn 2s ease-in-out infinite}
+@keyframes scrolldn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative}
+.sec{padding:120px 0}
+.sec-head{max-width:680px;margin-bottom:64px}
+.sec-head h2{font-size:clamp(28px,4vw,46px);font-weight:700;line-height:1.08;margin-top:18px}
+.sec-head p{color:var(--muted);margin-top:16px;font-size:17px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+
+/* what we do */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:linear-gradient(160deg,var(--panel),var(--ink-2));
+  border:1px solid var(--line);border-radius:18px;padding:34px 30px;position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s;
+}
+.card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.card:hover{transform:translateY(-8px);border-color:var(--line-2);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.card:hover::before{transform:scaleX(1)}
+.card .ico{width:46px;height:46px;border-radius:12px;background:var(--cyan-dim);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.card .ico svg{width:22px;height:22px;stroke:var(--cyan)}
+.card h3{font-size:21px;font-weight:600;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15px}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);counter-reset:step}
+.step{padding:38px 26px 38px 0;border-right:1px solid var(--line);position:relative;transition:background .4s}
+.step:last-child{border-right:none}
+.step:hover{background:var(--ink-2)}
+.step .n{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--cyan);letter-spacing:.1em}
+.step .bar{height:2px;background:var(--line);margin:18px 0;position:relative;overflow:hidden}
+.step .bar i{position:absolute;inset:0;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .8s ease}
+.step.in .bar i{transform:scaleX(1)}
+.step h3{font-size:19px;font-weight:600;margin-bottom:10px}
+.step p{color:var(--muted);font-size:14px}
+
+/* differentiators split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.split h2{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1}
+.feat-list{display:flex;flex-direction:column;gap:2px}
+.feat{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start;transition:padding-left .3s}
+.feat:hover{padding-left:8px}
+.feat .chk{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1px solid var(--cyan);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.feat .chk svg{width:12px;height:12px;stroke:var(--cyan)}
+.feat span{font-size:15.5px;color:var(--text)}
+
+/* marketplaces */
+.mkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mkt{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:24px 22px;
+  transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;
+}
+.mkt:hover{border-color:var(--cyan);transform:translateY(-4px)}
+.mkt .name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px}
+.mkt .dom{font-size:13px;color:var(--muted-2);margin-top:5px}
+.mkt .live{position:absolute;top:16px;right:16px;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);opacity:0;transition:opacity .3s}
+.mkt:hover .live{opacity:1;animation:pulse 1.6s infinite}
+
+/* CTA band */
+.cta-band{padding:120px 0;position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,var(--cyan-dim),transparent 60%)}
+.cta-inner{position:relative;text-align:center;max-width:640px;margin:0 auto}
+.cta-inner h2{font-size:clamp(30px,4.5vw,52px);font-weight:700;line-height:1.05}
+.cta-inner p{color:var(--muted);margin:20px 0 34px;font-size:17px}
+.mail-pill{
+  display:inline-flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;
+  padding:18px 32px;border:1px solid var(--line-2);border-radius:50px;transition:all .3s;
+}
+.mail-pill:hover{border-color:var(--cyan);background:var(--cyan-dim);color:var(--cyan)}
+
+/* footer */
+footer{padding:80px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid var(--line)}
+.foot-grid h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px;font-weight:600}
+.foot-grid p,.foot-grid a{font-size:14px;color:var(--muted);display:block;margin-bottom:8px}
+.foot-grid a:hover{color:var(--cyan)}
+.foot-brand .brand{font-size:24px;margin-bottom:14px}
+.foot-brand .tag{font-size:14px;color:var(--muted);max-width:30ch}
+.foot-bottom{padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted-2)}
+
+@media(max-width:900px){
+  .cards{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .step{border-right:none;border-bottom:1px solid var(--line)}
+  .split{grid-template-columns:1fr;gap:36px}
+  .mkt-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--ink-2);padding:24px 28px;gap:20px;border-bottom:1px solid var(--line)}
+  .nav-toggle{display:block}
+  .sec{padding:84px 0}
+  .hero-stats{gap:28px}
+}
+@media(max-width:560px){
+  .proc{grid-template-columns:1fr}
+  .mkt-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="brand"><span class="dot"></span>Capraz<span style="color:var(--cyan)">.</span></a>
+  <div class="nav-links" id="navlinks">
+    <a href="#what-we-do">What We Do</a>
+    <a href="#process">How We Work</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#contact" class="nav-cta">Partner with us</a>
+  </div>
+  <button class="nav-toggle" id="navtoggle" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <canvas id="net"></canvas>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal in">Authorized Reseller &amp; Brand Partner</span>
+    <h1 class="reveal in" data-d="1">Your brand, <em>protected</em> and growing on Amazon.</h1>
+    <p class="lead reveal in" data-d="2">Capraz LLC is a professional authorized reseller operating across Amazon North America, Europe, and major global e-commerce platforms. We eliminate unauthorized listings, strengthen your brand presence, and drive real sales growth — on your terms.</p>
+    <div class="hero-cta reveal in" data-d="3">
+      <a href="#contact" class="btn btn-primary">Partner with us →</a>
+      <a href="#what-we-do" class="btn btn-ghost">How it works</a>
+    </div>
+    <div class="hero-stats reveal in" data-d="3">
+      <div class="stat"><div class="num" data-count="20" data-suffix="+">0</div><div class="lbl">Amazon marketplaces covered — NA, Europe &amp; beyond</div></div>
+      <div class="stat"><div class="num">Multi</div><div class="lbl">Seller accounts across regions</div></div>
+      <div class="stat"><div class="num">100<span style="color:var(--cyan)">%</span></div><div class="lbl">Brand control, always maintained</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="line"></span>Scroll</div>
+</header>
+
+<!-- WHAT WE DO -->
+<section class="sec" id="what-we-do">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>More than a reseller. A brand growth partner.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal" data-d="1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Brand Protection</h3>
+        <p>We identify and eliminate unauthorized third-party listings that damage your pricing, reputation, and customer experience on Amazon.</p>
+      </div>
+      <div class="card reveal" data-d="2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Listing Optimization</h3>
+        <p>We rebuild and optimize your product listings — titles, images, A+ content — to maximize conversion and rank on every marketplace we operate in.</p>
+      </div>
+      <div class="card reveal" data-d="3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Long-Term Partnership</h3>
+        <p>We work alongside your brand, not around it. Transparent reporting, brand-aligned pricing, and shared goals for sustainable growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>Simple, transparent, results-driven.</h2>
+    </div>
+    <div class="proc">
+      <div class="step reveal" data-d="1">
+        <div class="n">01</div><div class="bar"><i></i></div>
+        <h3>Brand audit</h3>
+        <p>We analyze your current Amazon presence — unauthorized sellers, listing quality, pricing integrity — and present a clear picture of where you stand.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="n">02</div><div class="bar"><i></i></div>
+        <h3>Partnership agreement</h3>
+        <p>We align on goals, marketplaces, and brand guidelines before anything moves. Your brand stays in control at every stage.</p>
+      </div>
+      <div class="step reveal" data-d="3">
+        <div class="n">03</div><div class="bar"><i></i></div>
+        <h3>Launch &amp; optimize</h3>
+        <p>We activate your listings, enforce pricing, and drive traffic across our seller accounts in North America and Europe simultaneously.</p>
+      </div>
+      <div class="step reveal" data-d="3">
+        <div class="n">04</div><div class="bar"><i></i></div>
+        <h3>Report &amp; grow</h3>
+        <p>Regular performance updates, market insights, and continuous optimization — so you always know exactly what's happening with your brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="sec">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">What sets us apart</span>
+      <h2 style="margin-top:18px">We treat your brand like our own.</h2>
+      <p style="color:var(--muted);margin-top:18px;font-size:16px">Unlike brokers or aggregators, we are a direct reseller partner. No hidden channels, no undercutting. Your pricing policy is our pricing policy — and you deal directly with the decision-makers at Capraz.</p>
+    </div>
+    <div class="feat-list reveal" data-d="1">
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Multiple dedicated seller accounts in NA and EU regions</span></div>
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Strict MAP and pricing policy enforcement</span></div>
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Authorized seller status — no grey market, ever</span></div>
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Full listing ownership: copy, images, A+ content</span></div>
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Direct communication — no middlemen, no ticket systems</span></div>
+      <div class="feat"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><span>Presence on Amazon and beyond — all major platforms</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section class="sec" id="platforms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where We Operate</span>
+      <h2>Every marketplace your customers shop on.</h2>
+    </div>
+    <div class="mkt-grid">
+      <div class="mkt reveal"><span class="live"></span><div class="name">Amazon US</div><div class="dom">amazon.com</div></div>
+      <div class="mkt reveal" data-d="1"><span class="live"></span><div class="name">Amazon UK</div><div class="dom">amazon.co.uk</div></div>
+      <div class="mkt reveal" data-d="2"><span class="live"></span><div class="name">Amazon DE</div><div class="dom">amazon.de</div></div>
+      <div class="mkt reveal" data-d="3"><span class="live"></span><div class="name">Amazon FR</div><div class="dom">amazon.fr</div></div>
+      <div class="mkt reveal"><span class="live"></span><div class="name">Amazon IT</div><div class="dom">amazon.it</div></div>
+      <div class="mkt reveal" data-d="1"><span class="live"></span><div class="name">Amazon ES</div><div class="dom">amazon.es</div></div>
+      <div class="mkt reveal" data-d="2"><span class="live"></span><div class="name">Amazon CA</div><div class="dom">amazon.ca</div></div>
+      <div class="mkt reveal" data-d="3"><span class="live"></span><div class="name">Amazon NL</div><div class="dom">amazon.nl</div></div>
+      <div class="mkt reveal"><span class="live"></span><div class="name">Amazon SE</div><div class="dom">amazon.se</div></div>
+      <div class="mkt reveal" data-d="1"><span class="live"></span><div class="name">Amazon PL</div><div class="dom">amazon.pl</div></div>
+      <div class="mkt reveal" data-d="2"><span class="live"></span><div class="name">Amazon BE</div><div class="dom">amazon.com.be</div></div>
+      <div class="mkt reveal" data-d="3"><span class="live"></span><div class="name">+ More</div><div class="dom">eBay, Walmart &amp; others</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="contact">
+  <div class="wrap cta-inner reveal">
+    <span class="eyebrow" style="justify-content:center">Get in touch</span>
+    <h2 style="margin-top:18px">Ready to protect and grow your brand?</h2>
+    <p>We work with a select number of brand partners at a time to ensure every relationship gets the attention it deserves. If you're interested in working together, reach out directly.</p>
+    <a href="mailto:support@caprazllc.com" class="mail-pill">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+      support@caprazllc.com
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand"><span class="dot"></span>Capraz<span style="color:var(--cyan)">.</span></div>
+        <p class="tag">Authorized Amazon &amp; e-commerce partner. We protect, optimize, and grow brands across North America and Europe.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p>Capraz LLC</p>
+        <p style="color:var(--muted-2)">Operations: NA &amp; Europe</p>
+        <p style="color:var(--muted-2)">Response within 24h</p>
+      </div>
+      <div>
+        <h4>Locations</h4>
+        <p>30 N Gould St,<br>Sheridan, WY 82801</p>
+        <p style="color:var(--muted-2)">Warehouse: 1902 S York Rd,<br>Gastonia, NC 28052</p>
+      </div>
+      <div>
+        <h4>Platforms</h4>
+        <p>Amazon · eBay</p>
+        <p>Walmart &amp; more</p>
+        <a href="mailto:support@caprazllc.com">support@caprazllc.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>30 N Gould St, Sheridan WY 82801, USA</span>
+      <span>© 2026 Capraz LLC. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* nav scroll state */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+/* mobile menu */
+const tg=document.getElementById('navtoggle'),nl=document.getElementById('navlinks');
+tg.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+/* reveal on scroll */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.18});
+document.querySelectorAll('.reveal:not(.in),.step').forEach(el=>io.observe(el));
+
+/* count up */
+const cio=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'';let n=0;
+    const t=setInterval(()=>{n+=Math.ceil(target/30);if(n>=target){n=target;clearInterval(t)}el.textContent=n+suf},28);
+    cio.unobserve(el);
+  })
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ---- HERO NETWORK CANVAS ---- */
+const cv=document.getElementById('net'),cx=cv.getContext('2d');
+let W,H,DPR,nodes=[],pulses=[];
+const NAMES=['US','UK','DE','FR','IT','ES','CA','NL','SE','PL','BE'];
+function resize(){
+  DPR=Math.min(devicePixelRatio||1,2);
+  W=cv.width=innerWidth*DPR;H=cv.height=cv.offsetHeight*DPR;
+  cv.style.width=innerWidth+'px';
+  build();
+}
+function build(){
+  nodes=[];
+  const count=innerWidth<700?9:16;
+  for(let i=0;i<count;i++){
+    nodes.push({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.18*DPR,vy:(Math.random()-.5)*.18*DPR,
+      r:(Math.random()*1.6+1.4)*DPR,
+      hub:i<NAMES.length, label:NAMES[i]||''
+    });
+  }
+}
+function spawnPulse(){
+  if(nodes.length<2)return;
+  const a=nodes[(Math.random()*nodes.length)|0],b=nodes[(Math.random()*nodes.length)|0];
+  if(a===b)return;
+  pulses.push({a,b,t:0});
+}
+let pt=0;
+function draw(){
+  cx.clearRect(0,0,W,H);
+  // links
+  for(let i=0;i<nodes.length;i++){
+    for(let j=i+1;j<nodes.length;j++){
+      const a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+      const max=180*DPR;
+      if(d<max){
+        cx.strokeStyle='rgba(61,212,208,'+(1-d/max)*.14+')';
+        cx.lineWidth=DPR*.6;
+        cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();
+      }
+    }
+  }
+  // nodes
+  nodes.forEach(n=>{
+    n.x+=n.vx;n.y+=n.vy;
+    if(n.x<0||n.x>W)n.vx*=-1;
+    if(n.y<0||n.y>H)n.vy*=-1;
+    cx.beginPath();cx.arc(n.x,n.y,n.r,0,7);
+    cx.fillStyle=n.hub?'rgba(61,212,208,.9)':'rgba(180,200,220,.5)';
+    cx.fill();
+    if(n.hub){
+      cx.beginPath();cx.arc(n.x,n.y,n.r*2.6,0,7);
+      cx.strokeStyle='rgba(61,212,208,.18)';cx.lineWidth=DPR;cx.stroke();
+      cx.fillStyle='rgba(138,147,168,.6)';cx.font=(10*DPR)+'px Space Grotesk,sans-serif';
+      cx.fillText(n.label,n.x+n.r*3,n.y+3*DPR);
+    }
+  });
+  // pulses travelling along edges
+  pulses=pulses.filter(p=>p.t<=1);
+  pulses.forEach(p=>{
+    p.t+=.012;
+    const x=p.a.x+(p.b.x-p.a.x)*p.t,y=p.a.y+(p.b.y-p.a.y)*p.t;
+    cx.beginPath();cx.arc(x,y,2.4*DPR,0,7);
+    cx.fillStyle='rgba(245,166,35,.9)';cx.shadowBlur=12;cx.shadowColor='#F5A623';cx.fill();cx.shadowBlur=0;
+  });
+  pt++;if(pt%40===0)spawnPulse();
+  requestAnimationFrame(draw);
+}
+resize();addEventListener('resize',resize);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){draw();}
+</script>
+</body>
+</html>
